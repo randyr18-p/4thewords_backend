@@ -2,14 +2,14 @@ from pydantic_settings import BaseSettings
 from typing import Optional
 
 class Settings(BaseSettings):
-    # Configuración de base de datos (SÍNCRONA)
+    # Configuración de base de datos 
     DATABASE_URL: str = "mysql+pymysql://user:password@localhost:3306/dbname"
 
     # Configuración de desarrollo/producción
     DEBUG: bool = False
     ENVIRONMENT: str = "development"
 
-    # Configuración de pool de conexiones (optimizada para síncrono)
+    # Configuración de pool de conexiones 
     DB_POOL_SIZE: int = 15        # Aumentado para compensar bloqueo
     DB_MAX_OVERFLOW: int = 25     # Más conexiones overflow
     DB_POOL_RECYCLE: int = 3600   # Reciclar conexiones cada hora
